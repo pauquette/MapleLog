@@ -9,6 +9,13 @@ import { Entry } from './Entry';
 })
 export class AppComponent {
   title = 'MapleLog';
+  headers = [
+    'Name',
+    'Gallons',
+    'Sugar Content',
+    'Location',
+    'Timestamp'
+  ]
   entries: Entry[] = [
     {
       gallons: 750,
@@ -25,12 +32,4 @@ export class AppComponent {
       timestamp: '3/28/2022 2:23PM'
     }
   ]
-  headers_dict: { [key: string]: string,} = {
-    'name': 'Name',
-    'gallons': 'Gallons',
-    'sugar_content': 'Sugar Content',
-    'location': 'Location',
-    'timestamp': 'Timestamp'
-  }
-  headers: string[] = Object.getOwnPropertyNames(this.entries[0]).map((i: string) => this.headers_dict[i]) 
 }
