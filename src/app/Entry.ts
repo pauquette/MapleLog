@@ -1,7 +1,7 @@
 export class Entry {
-    name: String;
+    name: string;
     gallons: number;
     sugar_content: number;
-    location: String;
-    timestamp: String;
+    location: string;
+    timestamp: string;
 }

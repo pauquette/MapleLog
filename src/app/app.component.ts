@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Entry } from './Entry';
+// import { EntryDescriber } from './Entry';
 
 @Component({
   selector: 'app-root',
@@ -24,4 +25,12 @@ export class AppComponent {
       timestamp: '3/28/2022 2:23PM'
     }
   ]
+  headers_dict: { [key: string]: string,} = {
+    'name': 'Name',
+    'gallons': 'Gallons',
+    'sugar_content': 'Sugar Content',
+    'location': 'Location',
+    'timestamp': 'Timestamp'
+  }
+  headers: string[] = Object.getOwnPropertyNames(this.entries[0]).map((i: string) => this.headers_dict[i]) 
 }

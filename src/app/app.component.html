@@ -1,12 +1,8 @@
 <div class="container">
-  <table class="log_table">
+  <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Gallons</th>
-        <th>Sugar Content</th>
-        <th>Location</th>
-        <th>Timestamp</th>
+        <th *ngFor="let header of headers">{{header}}</th>
       </tr>
     </thead>
     <tbody>
