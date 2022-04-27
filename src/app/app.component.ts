@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Entry } from './Entry';
-// import { EntryDescriber } from './Entry';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,7 @@ export class AppComponent {
   headers = [
     'Name',
     'Gallons',
-    'Sugar Content',
+    'Sugar Content (%)',
     'Location',
     'Timestamp'
   ]
