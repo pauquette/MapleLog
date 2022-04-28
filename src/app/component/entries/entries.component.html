@@ -1,0 +1,44 @@
+<div class="orders">
+    <div class="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1" [(ngModel)]="searchDescription">
+            <span class="input-group-addon" id="basic-addon1">
+                <span class="glyphicon glyphicon-search"></span>
+            </span>
+        </div>
+    </div>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th class="actions">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </th>
+                <th class="name">Name</th>
+                <th class="gallons">Gallons</th>
+                <th class="sugar-content">Sugar Content (%)</th>
+                <th class="location">Location</th>
+                <th class="timestamp">Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let entry of entries">
+                <td class="actions">
+                    <span class="glyphicon glyphicon-pencil edit" (click)="editEntry(entry)"></span>
+                    <span class="glyphicon glyphicon-remove delete" (click)="deleteEntry(entry)"></span></td>
+                <td class="description">{{entry.name}}</td>
+                <td class="cost">{{entry.gallons}}</td>
+                <td class="cost">{{entry.sugar_content}}</td>
+                <td class="cost">{{entry.location}}</td>
+                <td class="cost">{{entry.timestamp}}</td>
+            </tr>
+
+            <!-- No orders are available -->
+            <tr *ngIf="entries.length === 0">
+                <td colspan="6" class="no-orders-message">No orders currently available</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="general-actions">
+        <button type="button" class="btn btn-primary" (click)="createEntry()"><span class="glyphicon glyphicon-plus"></span> Create</button>
+    </div>
+</div>
